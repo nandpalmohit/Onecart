@@ -1,0 +1,75 @@
+.navbar {
+  height: 120px;
+  padding-top: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo img {
+  width: 200px;
+}
+
+/* <!-- Navbar Search box design --> */
+.navbar .search .searchbox {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  height: 50px;
+}
+.navbar .search .searchbox input {
+  padding: 8px 20px;
+}
+.navbar .search .searchbox input:focus {
+  outline: none;
+  box-shadow: none;
+}
+.navbar .search .search_keyword {
+  text-decoration: none;
+  font-size: 14px;
+  margin: 2px 2px;
+  padding-right: 10px;
+  padding-left: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-width: 0px 1px 0px 0px;
+  height: 20px;
+  color: var(--default-color);
+}
+.navbar .search .search_keyword:hover {
+  color: var(--primary-color);
+}
+
+.navbar .search .search_keyword:last-child {
+  border-width: 0px;
+}
+
+/* <!-- Navbar Cartbox design --> */
+
+.navbar .cartbox a {
+  text-decoration: none;
+  color: var(--dark-color);
+}
+.navbar .cartbox h5 {
+  height: 20px;
+}
+
+.navbar .cartbox h5 ~ small{
+  font-size: 10px;
+  font-weight: 600;
+  visibility: hidden;
+}
+.navbar .cartbox a:hover small{
+  visibility: visible;
+}
+
+
+.navbar .cartbox span.title {
+  font-size: 12px;
+  color: var(--dark-color);
+}
+
+.navbar .cartbox .badge_mark {
+  position: absolute;
+  top: 0;
+  right: 0px;
+  translate: middle;
+  color: white;
+  background-color: var(--secondary-color);
+  font-size: 10px;
+}

@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+// import TopNavbar from './docs/Layouts/Navbar/TopNavbar';
+import CmpIndex from './docs/layouts/CmpIndex';
+import CmpProducts from './docs/layouts/InnerPage/CmpProducts';
+import CmpProduct from './docs/layouts/InnerPage/CmpProduct';
+import CmpAboutPage from './docs/layouts/About/CmpAboutPage';
+import { Routes, Route, Navigate, useHistory } from "react-router-dom";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path='/' index element={<CmpIndex />} />
+      <Route path='/:url/:categories/:products' element={<CmpProducts />} />
+      <Route path='/:url/:categories/:products/:slug' element={<CmpProduct />} />
+      <Route path='/' index element={<CmpIndex />} />
+      <Route path='/about-us' index element={<CmpAboutPage />} />
+      <Route path='/' index element={<CmpIndex />} />
+
+    </Routes>
   );
 }
 

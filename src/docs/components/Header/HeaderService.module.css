@@ -1,0 +1,9 @@
+.icon{
+  margin-top: 15px;
+  font-size: 3vw;
+  color: var(--secondary-color);
+}
+
+.service{
+  padding: 5px 0px 5px 15px;
+}
