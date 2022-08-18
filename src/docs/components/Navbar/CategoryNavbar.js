@@ -28,7 +28,6 @@ const CategoryNavbar = (props) => {
     <div className={`container-fluid ${style.categorybox}`}>
       <div className='row'>
         <div className='col-sm-3'>
-          
           <div className="dropdown">
             <a className={`${style.nav_link} ${ui.nav_link} btn btn-white btn-sm text-uppercase dropdown-toggle`} type="button" data-bs-toggle="dropdown" aria-expanded="false" onClick={handleDropdown}>
               Category

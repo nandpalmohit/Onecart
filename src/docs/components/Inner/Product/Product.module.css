@@ -8,6 +8,16 @@
   border: 1px solid rgba(0,0,0,0.1);
 }
 
+.review_star{
+  font-size: 14px;
+  color: var(--default-color);
+  margin-bottom: 0px;
+}
+.review_star span{
+  padding-left: 2px;
+}
+
+
 a.link{
   text-decoration: none;
   font-weight: 600;
@@ -16,4 +26,33 @@ a.link{
 }
 a.link:hover{
   color: var(--secondary-color) !important;
+}
+
+hr.hr{
+  height: 1;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.custom_select{
+  border-radius: 0px;
+  border-color: rgba(0,0,0,0.1);
+}
+
+.button{
+  border: 1px solid rgba(0,0,0,0.1);
+}
+.button button:hover{
+  background-color: var(--light-color);
+}
+
+input:focus, .custom_select:focus{
+  outline: none;
+  box-shadow: none !important;
+  border-color: var(--primary-color);
+}
+
+
+
+.custom_select option:focus-within{
+  background-color: var(--primary-color) !important;
 }

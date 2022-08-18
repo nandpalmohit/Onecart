@@ -1,6 +1,7 @@
 import React from 'react';
 import ProductImg from './ProductImg';
 import ProductInfo from './ProductInfo';
+import ProductService from './ProductService';
 
 const ProductSection = (props) => {
 
@@ -14,6 +15,9 @@ const ProductSection = (props) => {
         </div>
         <div className='col-sm-5'>
           <ProductInfo pr={props.apiResponse} />
+        </div>
+        <div className='col-sm-2'>
+          <ProductService />
         </div>
       </div>
     </div>

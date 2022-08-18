@@ -6,6 +6,10 @@ const Navbar = (props) => {
   const mostSearched = props.mostSearched;
   const mostSearch = mostSearched.map((keyword) => <a className={`${style.search_keyword}`} href={keyword.slug} key={keyword.name}>{keyword.name}</a>)
 
+  const handleRightBar = () => {
+    
+  }
+
   return (
     <>
       <div className={` container-fluid ${style.navbar} `}>
@@ -37,7 +41,7 @@ const Navbar = (props) => {
           <div className={` col-sm-2 ${style.cartbox} mt-3`}>
             <div className="row pt-1">
               <div className="col-sm-3 text-center">
-                <a className="btn btn-white position-relative" href="#">
+                <a className="btn btn-white position-relative">
                   <h5 className='mb-0'>
                     <i className="d-block fas fa-user-circle"></i>
                   </h5>
@@ -47,7 +51,7 @@ const Navbar = (props) => {
                 </a>
               </div>
               <div className="col-sm-3 text-center">
-                <a className="btn btn-white position-relative" href="#">
+                <a className="btn btn-white position-relative">
                   <h5 className='mb-0'>
                     <i className="d-block fas fa-heart"></i>
                   </h5>
@@ -57,15 +61,21 @@ const Navbar = (props) => {
                 </a>
               </div>
               <div className="col-sm-3 text-center">
-                <a className="btn btn-white position-relative" href="#">
+                <a className="btn btn-white position-relative">
                   <h5 className='mb-0'>
                     <i className="fas fa-shopping-bag"></i>
                   </h5>
-
                   <span className={`badge rounded-pill ${style.badge_mark}`}>
                     1
                   </span>
                 </a>
+              </div>
+              <div className="col-sm-3 text-center">
+                <button className="btn btn-white position-relative" onClick={handleRightBar}>
+                  <h5 className='mb-0'>
+                  <i class="fas fa-align-right"></i>
+                  </h5>
+                </button>
               </div>
 
             </div>

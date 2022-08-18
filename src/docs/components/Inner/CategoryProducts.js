@@ -20,17 +20,12 @@ const CategoryProducts = (props) => {
   }) : '';
 
 
-
-
-
-
-
   return (
-    <div className='hi'>
+    <div className='my-4 px-2'>
       {Alert ? (<div className='text-center'>
         <img src={loading} alt="" width="200px" />
-      </div>) : (<SingleProduct pr={filterData} counter={counter} locatedCt={props.locatedCt} /> )}
-      
+      </div>) : (<SingleProduct pr={filterData} counter={counter} locatedCt={props.locatedCt} />)}
+
     </div>
   );
 }
