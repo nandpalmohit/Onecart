@@ -41,3 +41,18 @@ li.li{
   color: var(--primary-color);
 }
 
+
+/* <!-- Animation for theme --> */
+/* <!-- activeCtList --> */
+.animateList{
+  animation: animateList .3s;
+}
+
+@keyframes animateList {
+  from {
+    margin-left: -150px;
+  }
+  to {
+    margin-left: 0px;
+  }
+}

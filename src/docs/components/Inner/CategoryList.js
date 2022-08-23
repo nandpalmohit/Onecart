@@ -23,13 +23,15 @@ const CategoryList = (props) => {
   const active = List ? 'block' : 'none';
 
 
+
+
   return (
     <>
       <ul className={`${style.ul}`}>
         <li key={props.index} className={`${style.li}`}><h6 className={`${style.subtitle} bold-600`} onClick={showCtList}>{props.el.name}</h6></li>
         {props.el.items.length !== 0 ? props.el.items.map((i, index) => {
           return (
-            <li key={index} className={`${style.li}`} style={{ display: `${active}` }}>
+            <li key={index} className={`${style.li} ${List ? style.animateList : ''}`} style={{ display: `${active}` }}>
               <Link state={{ category: i, parentCategorySlug: props.el.slug, parentCategoryName: props.el.name }} to={`/categories/${props.el.slug}/${i.slug}`} className={`${ui.nav_link} ms-2 ${i.name == location.state.category.name ? 'txt-secondary' : 'txt-muted'} `} >
                 {i.name}
               </Link>

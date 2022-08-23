@@ -21,12 +21,13 @@ const CmpProduct = (props) => {
     })
       .then(response => setapiResponse(response.data))
       .catch(error => setapiErrors(error));
+      
   }, []);
 
   return (
     <>
       <CmpNavbar />
-      <ProductPage apiResponse={apiResponse} apiErrors={apiErrors} />
+      <ProductPage apiResponse={apiResponse} apiErrors={apiErrors} productCallback={props.productCallback} />
     </>
   );
 }

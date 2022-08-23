@@ -1,30 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
 import ProductHeader from './Sections/ProductHeader';
+import ProductQty from './Sections/ProductQty';
 import ProductChoice from './Sections/ProductChoice';
-
-
+import ProductOption from './Sections/ProductOption';
+import ProductCategories from './Sections/ProductCategories';
+import ProductSpecs from './Sections/ProductSpecs';
+import { useLocation } from 'react-router-dom';
 import style from './Product.module.css';
 
 const ProductInfo = (props) => {
-  console.log(props.pr);
-  const dispatch = useDispatch();
 
-  const [quantity, setQuantity] = useState(1);
+  const [options, setOptions] = useState([]);
 
-  const incrementQty = (e) => {
-    e.preventDefault();
-    setQuantity(quantity + 1);
-  }
+  const location = useLocation();
+  const prQuantity = useSelector((state) => state.prQuantity);
 
-  const decreamentQty = (e) => {
-    e.preventDefault();
-    {
-      quantity > 1 &&
-      setQuantity(quantity - 1)
-    }
-  }
+  const prTotalPrice = useSelector((state) => state.totalPrice);
+
+  useEffect(() => {
+    parseFloat(localStorage.setItem('prPrice', location.state.product.price.amount));
+    localStorage.setItem('prName', location.state.product.name);
+    parseFloat(localStorage.setItem('prTotalPrice', prTotalPrice));
+    parseFloat(localStorage.setItem('prQuantity', prQuantity));
+  });
+
+
 
 
 
@@ -33,38 +35,17 @@ const ProductInfo = (props) => {
       {props.pr && (
         <div className="card border-0">
           <div className="card-body">
-            <ProductHeader pr={props.pr}  />
+            <ProductHeader pr={props.pr} />
             <ProductChoice />
             <hr className={`${style.hr}`} />
             <h3 className='txt-dark bold-700'>{props.pr.formatted_price}</h3>
-            <div className={`${style.options}`}>
-              {props.pr.options.map((attr) => {
-                return (
-                  <div className="row align-items-center my-3">
-                    <div className="col-3">
-                      <label htmlFor="inputPassword6" className="col-form-label bold-600">{attr.name}</label>
-                    </div>
-                    <div className="col-5">
-                      {attr.type == 'dropdown' && (<select name={attr.name} className={`${style.custom_select} form-select`}>
-                        <option value="" selected disabled>Choose an option</option>
-                        {attr.values.map((val, index) => {
-                          return <option value="">{val.label}</option>
-                        })}
-                      </select>)}
-                    </div>
-                  </div>
-                )
-              })}
-            </div>
-
+            <ProductOption pr={props.pr} options={options} setOptions={setOptions} />
+            <ProductQty stock={props.pr.is_in_stock} options={options} setOptions={setOptions} productCallback={props.productCallback} />
             <hr className={`${style.hr}`} />
-            <p>Categories:
-              {props.pr.categories.map((ct, index) => {
-                return (
-                  <small key={index}>{index !== 0 && ','} <span className="txt-secondary">{ct.name}</span></small>
-                )
-              })}
-            </p>
+            <small className='txt-dark'>SKU: {props.pr.sku ? <span className='txt-secondary'>{props.pr.sku}</span> : <span className='txt-secondary'>Not available</span>}</small>
+            <ProductCategories categories={props.pr.categories} />
+            <hr className={`${style.hr}`} />
+            <ProductSpecs specs={props.pr.attributes} />
           </div>
         </div>
       )}

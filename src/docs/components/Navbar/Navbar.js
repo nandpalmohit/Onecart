@@ -1,10 +1,13 @@
 import React from 'react';
+import { useSelector, useDispatch } from "react-redux";
+
 import style from './Navbar.module.css'
 
 // props by layout/CmpNavbar
 const Navbar = (props) => {
   const mostSearched = props.mostSearched;
   const mostSearch = mostSearched.map((keyword) => <a className={`${style.search_keyword}`} href={keyword.slug} key={keyword.name}>{keyword.name}</a>)
+  const quantity = useSelector((state) => state.quantity);
 
   const handleRightBar = () => {
     
@@ -66,14 +69,14 @@ const Navbar = (props) => {
                     <i className="fas fa-shopping-bag"></i>
                   </h5>
                   <span className={`badge rounded-pill ${style.badge_mark}`}>
-                    1
+                    {quantity}
                   </span>
                 </a>
               </div>
               <div className="col-sm-3 text-center">
                 <button className="btn btn-white position-relative" onClick={handleRightBar}>
                   <h5 className='mb-0'>
-                  <i class="fas fa-align-right"></i>
+                  <i className="fas fa-align-right"></i>
                   </h5>
                 </button>
               </div>

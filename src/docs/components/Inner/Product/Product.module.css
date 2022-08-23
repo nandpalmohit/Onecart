@@ -1,58 +1,119 @@
-.thumb_border{
-  border: 1px solid rgba(0,0,0,0.1);
+.thumb_border {
+  border: 1px solid rgba(0, 0, 0, 0.1);
   margin: 10px 0;
   cursor: pointer;
 }
 
-.img_border{
-  border: 1px solid rgba(0,0,0,0.1);
+.img_border {
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.review_star{
+.review_star {
   font-size: 14px;
   color: var(--default-color);
   margin-bottom: 0px;
 }
-.review_star span{
+.review_star span {
   padding-left: 2px;
 }
 
-
-a.link{
+a.link {
   text-decoration: none;
   font-weight: 600;
   font-size: 12px;
   color: var(--muted-color);
+  cursor: pointer;
 }
-a.link:hover{
+a.link:hover {
   color: var(--secondary-color) !important;
 }
 
-hr.hr{
+hr.hr {
   height: 1;
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
-.custom_select{
+.custom_select {
   border-radius: 0px;
-  border-color: rgba(0,0,0,0.1);
+  border-color: rgba(0, 0, 0, 0.1);
 }
 
-.button{
-  border: 1px solid rgba(0,0,0,0.1);
+/* <!-- Qty btn --> */
+.qty_button {
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
-.button button:hover{
-  background-color: var(--light-color);
+.qty_button button:hover {
+  color: var(--primary-color);
+}
+.qty_button_icon{
+  font-size: 10px !important;
 }
 
-input:focus, .custom_select:focus{
+/* <!-- Add to cart btn --> */
+.add_to_cart{
+  background-color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+  padding: 14px 20px;
+  font-size: 14px;
+  color: white;
+  transition: .3s;
+  font-weight: 700;
+  box-shadow: 0px 2px 10px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+.add_to_cart:hover{
+  transition: .3s;
+  background-color: var(--dark-color);
+  border-color: var(--dark-color);
+}
+.add_to_cart_animated{
+  background-color: white;
+  border: 1px solid var(--secondary-color);
+  padding: 14px 20px;
+  font-size: 20px;
+  color: var(--secondary-color);
+  transition: .3s;
+  font-weight: 700;
+  box-shadow: 0px 2px 10px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+
+input:focus,
+.custom_select:focus {
   outline: none;
   box-shadow: none !important;
   border-color: var(--primary-color);
 }
 
-
-
-.custom_select option:focus-within{
+.custom_select option:focus-within {
   background-color: var(--primary-color) !important;
+}
+
+/* <!-- checkbox css --> */
+.custom_checkbox {
+  display: inline-block;
+  color: var(--muted-color);
+}
+.custom_checkbox label {
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 5px 10px;
+  font-size: 14px;
+  transition: 0.3s;
+  margin: 5px 8px;
+  font-weight: 500;
+}
+
+.custom_checkbox input {
+  display: none;
+}
+
+.custom_checkbox label:hover {
+  transition: 0.3s;
+  border: 1px solid var(--primary-color);
+}
+
+.custom_checkbox input:checked ~ label {
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
 }
