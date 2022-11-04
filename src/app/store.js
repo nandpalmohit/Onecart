@@ -2,37 +2,43 @@ import { createStore } from "redux";
 import { useLocation } from "react-router";
 
 const initalStateValue = {
-  prName: localStorage.getItem('prName'),
-  prPrice: parseFloat(localStorage.getItem('prPrice')),
-  prQuantity: parseFloat(localStorage.getItem('prQuantity')),
-  totalPrice: parseFloat(localStorage.getItem('prPrice')),
-}
-
-
+  prName: localStorage.getItem("prName"),
+  prPrice: parseFloat(localStorage.getItem("prPrice")),
+  prQuantity: parseFloat(localStorage.getItem("prQuantity")),
+  totalPrice: parseFloat(localStorage.getItem("prPrice")),
+  authToken: {
+    token: null,
+  },
+};
 
 const qtyReducer = (state = initalStateValue, action) => {
-  if (action.type === 'incQty') {
+  if (action.type == "login") {
+    return {
+      ...state,
+      authToken: action.authToken,
+    };
+  }
+
+  if (action.type === "incQty") {
     return {
       ...state,
       prQuantity: action.prQuantity + 1,
       totalPrice: parseFloat(state.totalPrice) + action.prPrice,
-      addToCart: action.addToCart
-    }
-    
-  };
+      addToCart: action.addToCart,
+    };
+  }
 
-  if (action.type === 'decQty') {
+  if (action.type === "decQty") {
     return {
       ...state,
       prQuantity: action.prQuantity - 1,
       totalPrice: parseFloat(state.totalPrice) - action.prPrice,
-      addToCart: action.addToCart
-    }
-  };
+      addToCart: action.addToCart,
+    };
+  }
 
-  if (action.type === 'wishlist') {
+  if (action.type === "wishlist") {
     return {
-      ...state,
       wishlist: {
         prName: action.prName,
         prPrice: action.prPrice,
@@ -40,20 +46,18 @@ const qtyReducer = (state = initalStateValue, action) => {
         prCtSlug: action.prCtSlug,
         product: action.product,
         category: action.category,
-      }
-    }
+      },
+    };
   }
 
-  if (action.type === 'addToCart') {
+  if (action.type === "addToCart") {
     return {
       ...state,
-      prCtName: action.prCtName,
-      prCtSlug: action.prCtSlug,
-      product: action.product,
-      category: action.category,
-      addToCart: action.addToCart
-    }
-  };
+      addToCart: action.addToCart,
+      UniqueId: action.UniqueId,
+      cartCollection: action.cartCollection,
+    };
+  }
   return state;
 };
 

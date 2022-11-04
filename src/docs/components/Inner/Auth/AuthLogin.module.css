@@ -1,0 +1,103 @@
+.auth_container {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.auth_wrapper {
+  margin-top: 10vh;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  background: white;
+  position: relative;
+}
+
+.auth_banner {
+  min-height: 400px;
+  background-color: #005ae6 !important;
+  text-align: center;
+}
+.auth_banner img {
+  margin-top: 5vh;
+  width: 80%;
+}
+.auth_banner_content {
+  padding: 5px 16px;
+}
+.auth_banner_content .banner_title {
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+}
+.auth_banner_content .banner_subtitle {
+  font-size: 14px;
+  color: var(--light-color);
+  font-weight: 500;
+}
+
+/* <!-- auth_login --> */
+.auth_login .auth_title {
+  padding: 10px 16px;
+}
+.auth_login .auth_title small {
+  font-size: 12px;
+}
+.auth_login .auth_form_wrapper,
+.auth_login .auth_form {
+  padding: 10px 10px;
+}
+.auth_login .auth_form_wrapper .input_form {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0px;
+}
+.auth_login .auth_form_wrapper .input_form:hover,
+.auth_login .auth_form_wrapper .input_form:focus {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+.auth_login .auth_form_wrapper .input_form_label {
+  font-size: 14px;
+}
+.auth_login .auth_policy {
+  margin-top: 20px;
+  font-size: 10px;
+  text-align: center;
+  padding: 0px 5px;
+}
+
+.auth_login .banner_actionbtn {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 5vh;
+  color: var(--muted-color);
+  text-align: center;
+}
+.auth_login .banner_actionbtn a {
+  color: white;
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+.close_modal {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  padding: 4px;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 50%;
+  line-height: 1;
+  color: #005ae6;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  background-color: #fff;
+  border: 2px solid #005ae6;
+}

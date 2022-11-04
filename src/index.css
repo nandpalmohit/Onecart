@@ -1,99 +1,113 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
-
+  font-family: "Inter", sans-serif;
 }
-:root{
+:root {
   --primary-color: #3d5a80;
   --secondary-color: #e76f51;
   --dark-color: #293241;
   --light-color: #e2e2e2;
   --default-color: #98c1d9;
   --muted-color: #808080;
-  --black-color : #000;
+  --black-color: #000;
   --white-color: #fff;
 }
 
-button:focus,input:focus,a:focus{
+button:focus,
+input:focus,
+a:focus {
   box-shadow: none !important;
 }
 
-.font-sans{
-  font-family: 'Inter', sans-serif;
+.font-sans {
+  font-family: "Inter", sans-serif;
 }
-.font-brand{
-  font-family: 'Lexend Deca', sans-serif;
-
+.font-brand {
+  font-family: "Lexend Deca", sans-serif;
 }
 
 /* <!-- Font weight --> */
-.bold-200{
+.bold-200 {
   font-weight: 200;
 }
-.bold-300{
+.bold-300 {
   font-weight: 300;
-}.bold-400{
+}
+.bold-400 {
   font-weight: 400;
-}.bold-500{
+}
+.bold-500 {
   font-weight: 500;
-}.bold-600{
+}
+.bold-600 {
   font-weight: 600;
-}.bold-700{
+}
+.bold-700 {
   font-weight: 700;
 }
-.bold-800{
+.bold-800 {
   font-weight: 800;
 }
-.bold-900{
+.bold-900 {
   font-weight: 900;
 }
 
 /* <!-- Text color --> */
-.txt-primary{
+.txt-primary {
   color: var(--primary-color);
 }
-.txt-secondary{
+.txt-secondary {
   color: var(--secondary-color);
 }
 
-.txt-dark{
+.txt-dark {
   color: var(--dark-color);
 }
 
-.txt-light{
+.txt-light {
   color: var(--light-color);
 }
 
-.txt-default{
+.txt-default {
   color: var(--default-color);
 }
-.txt-muted{
+.txt-muted {
   color: var(--muted-color);
 }
 
 /* <!-- Background color --> */
-.my-bg-primary{
+.my-bg-primary {
   background-color: var(--primary-color);
   color: white;
 }
-.my-bg-secondary{
+.my-bg-secondary {
   background-color: var(--secondary-color);
   color: white;
 }
 
-.my-bg-dark{
+.my-bg-dark {
   background-color: var(--dark-color);
   color: white;
 }
 
-.my-bg-light{
+.my-bg-light {
   background-color: var(--light-color);
   color: black;
 }
 
-.my-bg-default{
+.my-bg-default {
   background-color: var(--default-color);
   color: white;
+}
+
+.c-pointer {
+  cursor: pointer;
+}
+
+/* <!-- Model diable / enable --> */
+.enabled {
+  height: 100vh;
+  overflow: hidden;
 }

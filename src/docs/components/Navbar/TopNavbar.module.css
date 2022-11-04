@@ -1,24 +1,28 @@
-.container{
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+.container {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
-.navbar_links{
+.navbar_links {
   text-align: end;
 }
-.navbar_links i{
+.navbar_links i {
   margin: 0px 5px 0px 0px;
   color: var(--secondary-color);
-
-}
-.navbar_links a{
-  color: rgba(0,0,0,1);
-  text-decoration: none;
-  padding: 0px 20px;
-  border-left: 1px solid rgba(0,0,0,0.1);
-  transition: .3s;
   font-size: 14px;
 }
-.navbar_links a:hover{
-  color: var(--secondary-color);
-  transition: .3s;
+.navbar_links a,
+.navbar_links span {
+  color: rgba(0, 0, 0, 1);
+  text-decoration: none;
+  padding: 0px 15px;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  font-size: 14px;
+}
+.navbar_links a:first-child {
+  border: none;
 }
 
+.navbar_links a:hover {
+  color: var(--secondary-color);
+  transition: 0.3s;
+}
